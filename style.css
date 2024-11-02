@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000 0% 50%,
+    transparent 50% 100%
+  );
+  background-size: 4px 4px;
+}
+
+section {
+  width: 100%;
+  background-image: url('fotos/n1.avif');
+  background-size: cover;
+  height: 100vh;
+
+  @media (width <= 1111px) {
+    background-position: center right;
+  }
+  animation: change 0.1s linear infinite alternate;
+}
+
+@keyframes change {
+  0% {
+    mix-blend-mode: overlay;
+  }
+  100% {
+    mix-blend-mode: lighten;
+  }
+}
